@@ -70,7 +70,7 @@ def solver_score(output):
     if not ok or nrun == 0:
         return 0.0, [0, 0, 0]
     pts = (SOLVER_GEOMETRY * geom / nrun + SOLVER_WA * wa / nrun +
-           SOLVER_POLICY * pol / pol_total if pol_total else 0)
+           (SOLVER_POLICY * pol / pol_total if pol_total else 0))
     return round(pts, 1), [geom, wa, pol]
 
 
